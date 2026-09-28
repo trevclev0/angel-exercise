@@ -1,0 +1,25 @@
+{
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.codeActions.triggerOnFocusChange": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.experimental.classRegex": [["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.jj": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.gitkeep": true
+  },
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
+}

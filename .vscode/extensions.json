@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "biomejs.biome",
+    "bradlc.vscode-tailwindcss",
+    "hverlin.mise-vscode",
+    "tamasfe.even-better-toml",
+    "vitest.explorer",
+    "firefox-devtools.vscode-firefox-debug"
+  ],
+  "unwantedRecommendations": [
+    "github.copilot",
+    "github.copilot-chat",
+    "codeium.codeium",
+    "google.geminicodeassist",
+    "supermaven.supermaven",
+    "tabnine.tabnine-vscode",
+    "amazonwebservices.amazon-q-vscode"
+  ]
+}
