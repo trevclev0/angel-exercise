@@ -39,7 +39,6 @@ The app was built and deployed to a Cloudflare Worker, which can be found [here]
 | Build / dev server | Vite |
 | Styling | Tailwind CSS v4 (via `@tailwindcss/vite`, no config file) |
 | Format + lint | Biome (formatter, linter, import sorting, Tailwind class sorting, React hook rules) |
-| Tests | Vitest + happy-dom + Testing Library |
 | Tool versions | mise (pins Node and pnpm) |
 
 ## Quick start
@@ -59,7 +58,6 @@ Not using mise? Install the Node and pnpm versions listed in `mise.toml` manuall
 | `pnpm dev` | Start the dev server with hot reload |
 | `pnpm build` | Type-check, then build for production into `dist/` |
 | `pnpm preview` | Serve the production build locally |
-| `pnpm test` | Run Vitest in watch mode (`pnpm test --run` for a single pass) |
 | `pnpm check` | Biome format + lint + organize imports, writing fixes |
 
 ## Project structure
@@ -70,7 +68,7 @@ src/
   main.tsx         app entry; mounts <App /> into #root
   App.tsx          top-level component — start here
   index.css        Tailwind import
-  components/      components and their *.spec.tsx tests
+  components/      components
   hooks/           custom hooks
   assets/          images and other imported assets
   test-utils/      test setup (happy-dom matchers, cleanup between tests)
