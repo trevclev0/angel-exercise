@@ -12,8 +12,10 @@ function App() {
     <div className="min-h-screen bg-white transition-colors duration-200">
       <div className="p-4">
         <HeaderLogo />
-        <SearchBar addCat={addCat} />
-        <CatsCatalog cats={cats} />
+        <main>
+          <SearchBar addCat={addCat} />
+          <CatsCatalog cats={cats} />
+        </main>
       </div>
     </div>
   );
