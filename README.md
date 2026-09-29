@@ -2,7 +2,7 @@
 
 An exercise fetching cat data and displaying cat images from the Cat as a service API.
 
-Time spent: ~1 hour during the assessment + ~75 minutes later that evening (reworking stories 1–4) + ~50 minutes after that (deploy, polish, documentation, stories 5–6).
+Time spent: ~1 hour during the assessment + 55-75 minutes later that evening (reworking stories 1–4) + 45-55 minutes after that (deploy, polish, documentation, stories 5–6).
 
 ## Resources used:
 
