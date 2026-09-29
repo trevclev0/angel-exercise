@@ -1,6 +1,8 @@
 import type { Cat } from '../services/catsQueries';
 
-export function CatCard({ id, url }: Cat) {
+type CatCardProps = Omit<Cat, 'queryDate'>;
+
+export function CatCard({ id, url }: CatCardProps) {
   return (
     <div className="aspect-square overflow-hidden rounded-xl bg-[#EF5A50] opacity-100 starting:opacity-0 transition-opacity duration-2000">
       <a href={`#${id}`}>
