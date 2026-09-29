@@ -1,6 +1,34 @@
-# Interview Starter
+# Cat-alog
 
-A minimal, pre-configured React + TypeScript playground for live-coding interviews and practice builds. Clone it, install, and start building — no setup decisions on the clock.
+An exercise fetching cat data and displaying cat images from the Cat as a service API.
+
+Time spent: ~1 hour during the assessment + ~45 minutes this evening (reworking stories 1–4) + ~45 minutes after that (deploy, polish, documentation, stories 5–6).
+
+## Resources used:
+
+- [CATAAS](https://cataas.com/doc.html)
+- [Cat-alog Notion page with challenge](https://angelstudios.notion.site/Cat-alog-09d44ca8b672418fa052332a66361387)
+- [Tailwind documentation](https://tailwindcss.com/)
+- Cloudflare (for simple hosting)
+- Search Engine
+
+> [!NOTE]
+No AI was used in the implementation for either session
+
+## Stories
+
+- ✅ As a user, I can see all of the cats I have retrieved within this session.
+- ✅ As a user, I can retrieve a random cat and see it’s picture.
+- ✅ As a user, I can retrieve a random cat with a text phrase, using the `:text` parameter.
+- ✅ As a user, I can retrieve a random cat using the tags provided by the API.
+- ✅ As a user, I am delighted by an animation as the new images enter my screen.
+- ✅ As a user, I can navigate to a “detail” page for a single image.
+
+## Hosted App
+
+The app was built and deployed to a Cloudflare Worker, which can be found [here](https://angel-exercise.clevertrevor.workers.dev/)
+
+---
 
 ## Stack
 
@@ -48,52 +76,8 @@ src/
   test-utils/      test setup (happy-dom matchers, cleanup between tests)
 ```
 
-## Testing
-
-Tests live next to the code they cover as `*.spec.tsx` and run in a simulated browser (happy-dom), so components can be rendered and queried. `src/test-utils/setupTests.ts` loads the `@testing-library/jest-dom` matchers and cleans up the DOM between tests.
-
-Testing Library's `getBy*` queries throw when nothing matches, so a query on its own is a valid assertion:
-
-```tsx
-import { render, screen } from '@testing-library/react';
-import { describe, it } from 'vitest';
-import { WelcomeBanner } from './WelcomeBanner';
-
-describe('WelcomeBanner', () => {
-  it('renders welcome message with provided name prop', () => {
-    render(<WelcomeBanner name="John Doe" />);
-
-    screen.getByRole('heading', { name: 'Welcome John Doe' });
-  });
-});
-```
-
-For state and attributes, the jest-dom matchers read more clearly:
-
-```tsx
-expect(screen.getByRole('button', { name: 'Submit' })).toBeDisabled();
-expect(screen.getByRole('alert')).toHaveTextContent('Email is required');
-```
-
 ## Editor setup (VS Code)
 
 - Open the folder and accept the recommended extensions (Biome, Tailwind IntelliSense, mise, Vitest Explorer).
 - Format on save runs through Biome, including Tailwind class sorting.
 - AI completion extensions (Copilot, Codeium, Gemini, Tabnine, Supermaven, Amazon Q) are listed as **unwanted** in `.vscode/extensions.json`. For interviews that forbid AI, open the project in a dedicated VS Code profile with those extensions disabled.
-
-## Using this as a template
-
-On GitHub, click **Use this template → Create a new repository**, or from the CLI:
-
-```sh
-gh repo create my-exercise --template <owner>/interview-starter --private --clone
-```
-
-Then rename `name` in `package.json` and `<title>` in `index.html` if you want them to match the exercise.
-
-## Before an interview
-
-- [ ] `pnpm install && pnpm dev` runs clean on the machine you'll use
-- [ ] `pnpm test --run` passes
-- [ ] Editor opened in the AI-free profile
-- [ ] Screen share tested with both the editor and the browser visible
