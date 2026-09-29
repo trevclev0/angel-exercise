@@ -1,6 +1,7 @@
 type FormArgs = {
   catText: string;
   searchTag: string | undefined;
+  timestamp: number;
 };
 
 export type Cat = {
@@ -9,7 +10,7 @@ export type Cat = {
   queryDate: number;
 };
 
-export async function fetchCat({ catText, searchTag }: FormArgs): Promise<Cat> {
+export async function fetchCat({ catText, searchTag, timestamp }: FormArgs): Promise<Cat> {
   const fetchUrl = new URL('https://cataas.com/cat?json=true');
   if (searchTag) {
     fetchUrl.pathname += `/${searchTag}`;
@@ -26,7 +27,7 @@ export async function fetchCat({ catText, searchTag }: FormArgs): Promise<Cat> {
   }
 
   const cat: Cat = await response.json();
-  cat.queryDate = Date.now();
+  cat.queryDate = timestamp;
 
   return cat;
 }

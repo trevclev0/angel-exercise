@@ -7,7 +7,7 @@ export function useSearchBar(addCat: (cat: Cat) => void) {
   async function submitHandler(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const cat = await fetchCat(formData);
+    const cat = await fetchCat({ ...formData, timestamp: Date.now() });
     addCat(cat);
   }
 
