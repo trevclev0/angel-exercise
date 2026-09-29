@@ -1,24 +1,14 @@
 import { type ChangeEvent, type SubmitEvent, useState } from 'react';
-import { type Cat, fetchCat } from '../services/catsQueries';
+import type { Cat } from '../services/catsQueries';
+import { useSearchBarMutation } from './useSearchBarMutation';
 
 export function useSearchBar(addCat: (cat: Cat) => void) {
   const [formData, setFormData] = useState({ catText: '', searchTag: '' });
-  const [findingCat, setFindingCat] = useState(false);
+  const mutation = useSearchBarMutation(addCat);
 
-  async function submitHandler(event: SubmitEvent<HTMLFormElement>) {
+  function submitHandler(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
-    setFindingCat(true);
-
-    try {
-      const cat = await fetchCat({ ...formData, timestamp: Date.now() });
-      addCat(cat);
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error(`Error finding a cat: ${error.message}`);
-      }
-    } finally {
-      setFindingCat(false);
-    }
+    mutation.mutate(formData);
   }
 
   function changeHandler(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
@@ -26,7 +16,8 @@ export function useSearchBar(addCat: (cat: Cat) => void) {
   }
 
   return {
-    findingCat,
+    isPending: mutation.isPending,
+    error: mutation.error,
     submitHandler,
     changeHandler,
     ...formData,

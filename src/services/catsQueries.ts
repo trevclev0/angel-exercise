@@ -1,4 +1,4 @@
-type FormArgs = {
+export type FormArgs = {
   catText: string;
   searchTag: string | undefined;
   timestamp: number;
