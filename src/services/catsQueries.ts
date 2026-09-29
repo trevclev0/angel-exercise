@@ -6,7 +6,7 @@ type FormArgs = {
 export type Cat = {
   id: string;
   url: string;
-  queryDate: string;
+  queryDate: number;
 };
 
 export async function fetchCat({ catText, searchTag }: FormArgs): Promise<Cat> {
@@ -26,7 +26,7 @@ export async function fetchCat({ catText, searchTag }: FormArgs): Promise<Cat> {
   }
 
   const cat: Cat = await response.json();
-  cat.queryDate = new Date().toString();
+  cat.queryDate = Date.now();
 
   return cat;
 }
