@@ -30,7 +30,7 @@ export function CatTagSelector({ searchTag, changeHandler }: CatTagSelectorProps
     <select
       value={searchTag}
       name="searchTag"
-      className="m-1 cursor-pointer bg-white px-3 opacity-75 hover:opacity-100"
+      className="m-1 cursor-pointer rounded bg-white px-3 opacity-75 hover:opacity-100"
       onChange={changeHandler}
     >
       <option value="" disabled defaultValue="">
