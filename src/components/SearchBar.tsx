@@ -18,7 +18,7 @@ export function SearchBar({ addCat }: SearchBarProps) {
           onChange={changeHandler}
           value={catText}
           name="catText"
-          className="m-1 rounded bg-white px-3 opacity-75 hover:opacity-100 hover:ring-offset-4"
+          className="m-1 rounded bg-white px-3 opacity-75 ring-offset-[#D2AC92] hover:opacity-100 hover:ring-2 hover:ring-blue-500 hover:ring-offset-0 focus-visible:opacity-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-0"
         />
         <CatTagSelector searchTag={searchTag} changeHandler={changeHandler} />
         <button
