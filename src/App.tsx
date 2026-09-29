@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CatCard } from './components/CatCard';
+import { CatDetail } from './components/CatDetail';
 import { CatsCatalog } from './components/CatsCatalog';
 import { HeaderLogo } from './components/HeaderLogo';
 import { SearchBar } from './components/SearchBar';
@@ -17,9 +17,7 @@ function App() {
         <HeaderLogo />
         <main>
           {id ? (
-            <div className="mr-auto ml-auto max-w-200">
-              <CatCard id={id} url={`https://cataas.com/cat/${id}`} />
-            </div>
+            <CatDetail id={id} />
           ) : (
             <>
               <SearchBar addCat={addCat} />
