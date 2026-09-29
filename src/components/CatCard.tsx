@@ -15,7 +15,8 @@ export function CatCard({ id, url }: CatCardProps) {
         'overflow-hidden',
         'rounded-xl',
         'bg-[#EF5A50]',
-        catImgLoading && ['opacity-50', 'animate-pulse'],
+        'shadow-2xl',
+        catImgLoading && 'animate-pulse',
       ])}
     >
       <a href={`#${id}`}>
